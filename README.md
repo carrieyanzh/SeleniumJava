@@ -68,3 +68,16 @@ Keep XPath as short and robust as possible to avoid brittle locators when HTML c
 final on a local variable means: once assigned, the variable cannot point to another object.
 
 It does NOT make the object itself immutable. You can still call methods on it and change its internal state.
+
+
+2️⃣ Why use final for WebElements in a method
+
+Safety / intention clarity
+
+Shows that button will never be reassigned inside the method.
+
+Helps avoid accidental reassignment, especially in long methods.
+
+Required for inner classes / lambdas (Java 8+)
+
+If you want to use myAccountLink inside an anonymous class or a lambda, it must be final or effectively final.
