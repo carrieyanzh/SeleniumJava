@@ -62,3 +62,9 @@ You want exact hierarchy match	/a/div/span[@class='title'] (direct child)
 Always target the element that actually contains the visible text (like the <span> here), not the parent <a> if it contains icons or extra nested tags.
 
 Keep XPath as short and robust as possible to avoid brittle locators when HTML changes.
+
+1️⃣ final in Java
+
+final on a local variable means: once assigned, the variable cannot point to another object.
+
+It does NOT make the object itself immutable. You can still call methods on it and change its internal state.
