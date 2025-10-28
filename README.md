@@ -14,3 +14,51 @@ For most flexible and maintainable design, Option 2 + Option 3 combination is id
 Let BaseTest handle browser setup only.
 
 Each test class calls a helper like openUrl(url) for the page it needs.
+
+XPATH: HTML: 
+<a>
+  <i></i>
+  <div class="info">
+    <span class="title">My account</span>
+  </div>
+</a>
+
+//a//span[@class='title']
+Starts from <a> node.
+//span = search any descendant <span> at any depth, regardless of how many intermediate elements exist.
+Finds the <span> even if the hierarchy changes (e.g., extra <div> added, <span> moved deeper).
+Pros:
+Robust to minor changes in HTML structure.
+Simpler, shorter, easier to read.
+Cons:
+If there are multiple <span class="title"> under the <a>, you may accidentally select the wrong one
+
+//a//div//span[@class='title']
+Starts from <a> node.
+
+//div = search for any <div> descendant of <a> at any depth.
+
+//span[@class='title'] = search for <span> at any depth under that <div>.
+
+Pros:
+
+Slightly more specific, ensures the <span> is inside a <div>.
+
+Useful if <a> contains multiple <span>s, but only some are inside <div>s.
+
+Cons:
+
+Less robust if the <div> layer is removed or replaced in a future HTML change.
+
+Slightly longer XPath.
+
+3️⃣ When to prefer which
+Situation	Preferred XPath
+You just want the <span> text and there’s only one <span class="title"> under <a>	//a//span[@class='title']
+You want to ensure the <span> is inside a <div>, because <a> contains multiple <span>s	//a//div//span[@class='title']
+You want exact hierarchy match	/a/div/span[@class='title'] (direct child)
+
+4️⃣ Selenium practical tip
+Always target the element that actually contains the visible text (like the <span> here), not the parent <a> if it contains icons or extra nested tags.
+
+Keep XPath as short and robust as possible to avoid brittle locators when HTML changes.
