@@ -156,3 +156,6 @@ mvn clean test
 mvn allure:serve
 allure serve allure-results
 
+<img width="1920" height="1040" alt="image" src="https://github.com/user-attachments/assets/c9f2cc71-f2a3-47a0-9dbb-ae8eb63f22b8" />
+
+
