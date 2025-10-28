@@ -141,3 +141,10 @@ It prevents subtle bugs and improves readability.
 
 mvn test "-Dgroups=smoke" "-Dsurefire.printSummary=true" "-Dsurefire.useFile=false"
 
+🧭 Summary
+Method	Console	HTML Report	Setup Difficulty	Best For
+Reporter.log(..., true)	✅	✅	⭐ Easy	Quick visibility
+Allure Report	✅	✅✅✅	⭐⭐⭐	Team dashboards
+ExtentReports	✅	✅✅	⭐⭐	Custom UI, screenshots
+Log4j File Output	✅	✅ (with link)	⭐⭐	CI/CD integration
+
