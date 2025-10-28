@@ -139,3 +139,5 @@ Even in short test methods, marking WebElement as final is a safe habit.
 
 It prevents subtle bugs and improves readability.
 
+mvn test "-Dgroups=smoke" "-Dsurefire.printSummary=true" "-Dsurefire.useFile=false"
+
